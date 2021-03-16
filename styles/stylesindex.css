@@ -1,0 +1,84 @@
+:root{
+    --color-negro:#523106;
+    --color-blanco:#f0e9e2;
+    --color-principal: #75cfb8;
+    --color-secundario: #bbdfc8;
+    --color-contraste: #ffc478;
+    --color-prueba1: #ffcb91;
+    --color-prueba2: #ffefa1;
+    --color-prueba1: #94ebcd;
+    --color-prueba2: #6ddccf;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+body{
+    background-color: var(--color-blanco);
+    font-size: 1.2rem;
+    line-height: 2em;
+}
+header{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    padding: 1rem 0;
+    background-color:  var(--color-principal)
+}
+header a{
+    padding: 2rem;
+    color:var(--color-negro);
+}
+.menu ol li{
+    display: inline-block;
+}
+.menu ol li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius:5px;
+    transition: all 0.3s linear;
+}
+.menu ol li a:hover{
+    background-color: rgb(143, 120, 112,0.3);
+}
+.containerlogomenu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    letter-spacing:5px;
+    font-size:2em;
+    transition: all 0.3s linear;
+}
+main{
+    padding-top: 10rem;
+}
+.tabla1{
+    display: flex;
+    align-items: center;
+}
+.tabla1 tbody td{
+    min-width: 200px;
+    text-align: center;
+
+}
+.footer{
+    background-color: var(--color-principal);
+    padding:2rem 0;
+    margin-top: 5rem;
+    text-align: right;
+
+}
+.container{
+    width:85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
