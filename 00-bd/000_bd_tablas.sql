@@ -36,9 +36,8 @@ CREATE TABLE `empleados`(
 CREATE TABLE `informes`(
     `idInforme` MEDIUMINT UNSIGNED AUTO_INCREMENT,
     `idEmpleado` MEDIUMINT UNSIGNED,
-    `fecha` DATE DEFAULT NOW(),
+    `fecha` DATE,
     `totalPuntos` SMALLINT NOT NULL DEFAULT 100,
     PRIMARY KEY (idInforme),
     FOREIGN KEY (idEmpleado) REFERENCES empleados(idEmpleado)
 );
-

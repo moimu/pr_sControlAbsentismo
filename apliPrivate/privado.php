@@ -38,7 +38,7 @@
                 echo "<table class=tabla1>";
                 echo "<form method=POST enctype=application/x-www-form-urlencoded action=privado.php >";
                 
-                echo  "<tbody><tr> <th>idEmpleado</th><th>Nombre</th><th>Alias</th> <th>Email</th><th>% Incentivo</th><th>Salario</th><th>Puntos de Mérito</th><th>Equipo</th>
+                echo  "<tbody><tr> <th>Activo</th><th>idEmpleado</th><th>Nombre</th><th>Alias</th> <th>Email</th><th>% Incentivo</th><th>Salario</th><th>Puntos de Mérito</th><th>Equipo</th>
                 <th>Nº horas ausente</th><th>Nª horas retraso</th> </tr> ";
                 /**
                  * Para todos los empeados activos!
@@ -52,13 +52,14 @@
                 $totalPuntosSeleccion = [];
                 $totalids = 0;
                 while($sentencia->fetch()){
-                    if($activo == 1){
-                        echo  "<tr><td>$idEmpleado</td><td>$nombreCompleto</td><td>$aliasEmpleado</td><td>$email</td><td>$prIncentivo</td><td>$salario</td><td>$totalPuntos</td><td>$aliasEquipo</td> 
-                        <td> <input type=number min=0 name=ausente$totalids required> </td> <td> <input type=number min=0 name=retraso$totalids required> </td>  </tr> ";
-                        $idSeleccion[$totalids] = $idEmpleado;
-                        $totalPuntosSeleccion[$totalids] = $totalPuntos;
-                        $totalids++;
-                    }
+                    
+                    echo  "<tr><td>$activo</td><td>$idEmpleado</td><td>$nombreCompleto</td><td>$aliasEmpleado</td><td>$email</td><td>$prIncentivo</td>
+                    <td>$salario</td><td>$totalPuntos</td><td>$aliasEquipo</td> 
+                    <td> <input type=number min=0 name=ausente$totalids required> </td> <td> <input type=number min=0 name=retraso$totalids required> </td>  </tr> ";
+                    $idSeleccion[$totalids] = $idEmpleado;
+                    $totalPuntosSeleccion[$totalids] = $totalPuntos;
+                    $totalids++;
+                    
                 }
                 echo "</tbody>";
                 echo "</tfoot>";
@@ -130,6 +131,7 @@
                      * y 0 al porcentajeIncentivo, no recibe incentivo ese mes.
                      * Si no actualizo puntos
                      * 
+                     * variable $fecha contiene fecha actual para insercion en informes, anteriormente tenia el campo fecha DATE DEFAULT NOW(), ahora DATE
                      * Inserto nuevo registro en informes para cada idEmpleado con su nuevo valor totalPuntos y fecha actual automático en base datos
                      */
                     if($trigger == 1){
@@ -139,14 +141,16 @@
                         $updatePuntosEquipoIncentivo = $db -> prepare("UPDATE `empleados` SET `totalPuntos` =?, `idEquipo` =?, `porcentajeIncentivo` =? WHERE `idEmpleado` = ?");
                         $updatePuntosEquipoIncentivo -> bind_param('iiii', $param1, $param2, $param3 ,$idEmpleado);
 
-                        $insertPuntosInformes = $db -> prepare("INSERT INTO `informes`(`idEmpleado`,`totalPuntos`) VALUES(?,?)");
-                        $insertPuntosInformes -> bind_param('ii', $idEmpleado , $param1);
+                        $insertPuntosInformes = $db -> prepare("INSERT INTO `informes`(`idEmpleado`,`totalPuntos`,`fecha`) VALUES(?,?,?)");
+                        $insertPuntosInformes -> bind_param('iis', $idEmpleado , $param1, $param4);
+                        
+                        $param2 = 1;
+                        $param3 = 0; 
+                        $param4 = date('Y-m-d');
 
                         for($i=0; $i<$totalids; $i++){
                             $idEmpleado = $idSeleccion[$i];
                             $param1 = $totalPuntosSeleccion[$i] - $puntosRestar[$i] + $puntosSumar[$i];
-                            $param2 = 1;
-                            $param3 = 0; 
                             if($param1 < 50){
                                 $updatePuntosEquipoIncentivo -> execute();
                             }

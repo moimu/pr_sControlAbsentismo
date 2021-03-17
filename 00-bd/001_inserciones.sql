@@ -8,7 +8,6 @@ INSERT INTO `equipos`(`alias`,`descripcion`) VALUES ('#','Diseño y Marketing');
 INSERT INTO `equipos`(`alias`,`descripcion`) VALUES ('@','Redes Sociales');
 INSERT INTO `equipos`(`alias`,`descripcion`) VALUES ('wifi','Internacional');
 
-
 -- 1 horario
 
 INSERT INTO `horarios`(`lunes`,`martes`,`miercoles`,`jueves`,`viernes`) VALUES ('6','5','6','6','4');
@@ -31,20 +30,164 @@ INSERT INTO `empleados`(`idEquipo`,`nombreCompleto`,`alias`,`email`) VALUES ('7'
 INSERT INTO `empleados`(`idEquipo`,`nombreCompleto`,`alias`,`email`) VALUES ('7','Jesús Jesús Jesús','Sibarita','@designgra.eu');
 INSERT INTO `empleados`(`idEquipo`,`nombreCompleto`,`alias`,`email`) VALUES ('7','Rafa Kun fu','Kunfa','@designgra.eu');
 
--- 15 informes 
+-- 15 informes por dia  datos de 10 días laborales
 
-INSERT INTO `informes`(`idEmpleado`) VALUES ('1');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('2');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('3');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('4');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('5');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('6');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('7');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('8');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('9');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('10');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('11');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('12');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('13');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('14');
-INSERT INTO `informes`(`idEmpleado`) VALUES ('15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-17');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-17');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-16');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-16');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-15');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-15');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-14');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-14');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-13');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-13');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-12');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-12');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-11');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-11');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-10');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-10');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-09');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-09');
+
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('1','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('2','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('3','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('4','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('5','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('6','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('7','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('8','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('9','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('10','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('11','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('12','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('13','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('14','2021-03-08');
+INSERT INTO `informes`(`idEmpleado`,`fecha`) VALUES ('15','2021-03-08');

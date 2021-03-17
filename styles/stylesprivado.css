@@ -77,7 +77,7 @@ main{
     position: fixed;
     right:0;
     
-    max-width: 110px;
+    max-width: 190px;
     border-radius: 2px;;
     background-color: var(--color-principal);
     padding: 0.5rem 0.8rem;
