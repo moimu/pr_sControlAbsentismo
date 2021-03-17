@@ -33,7 +33,7 @@
                     <fieldset>
                         <legend>Informes</legend>
                         <div><label> Fecha: <input type="date" name="fecha" required><label></div>
-                        <div class="button"><button type="submit" name="enviar"> Generar </button></div>
+                        <div class="button"><button type="submit"> Generar </button></div>
                     </fieldset>
                 </form>
                 
@@ -75,18 +75,17 @@
                 <?php
                     include('conexionBd.php');
                     /**
-                     * Generar Informes a fecha concreta introducida , mi formulario de 
+                     * Generar Informes a fecha concreta introducida , existe un error tanto en el bindeo del parametroa aun siendo el mismo tipo de dato. 
+                     * como en el parametro num_rows, ejecutando la consulta directamente si funciona.
                      */
-                    if(isset($_POST['enviar'])){
+                    if(isset($_POST['fecha'])){
 
                         $param1 = $_POST['fecha'];
                         $sentencia = $db->prepare(" SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
                         FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = '$param1' ");
                         // $sentencia -> bind_param('s', $param1);
-                        
                         // var_dump($param1);
                         $sentencia -> execute();
-
                         $fechaActual = date('Y-m-d');
                         // if($sentencia->num_rows > 0){ 
                             $sentencia ->bind_result($fecha, $totalPuntos, $nombreCompleto);
