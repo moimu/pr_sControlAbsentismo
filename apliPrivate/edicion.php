@@ -84,7 +84,7 @@
                         $param1 = $_POST['fecha'];
                         $sentencia -> execute();
 
-                        $fechaActual = date('d-m-Y');
+                        $fechaActual = date('Y-m-d');
                         if($sentencia->affected_rows > 0){
                             $sentencia ->bind_result($fecha, $totalPuntos, $nombreCompleto);
                             $fichero = fopen("informe_$fechaActual.txt","w");
