@@ -75,8 +75,8 @@
                 <?php
                     include('conexionBd.php');
                     /**
-                     * Generar Informes a fecha concreta introducida , existe un error tanto en el bindeo del parametroa aun siendo el mismo tipo de dato. 
-                     * como en el parametro num_rows, ejecutando la consulta directamente si funciona.
+                     * Generar Informes a fecha concreta introducida , store_result() transfiere resultados al parametro instaciado $sentencia, 
+                     * num_rows atributo numero filas devueltas
                      */
                     if(isset($_POST['fecha'])){
                         $sentencia = $db->prepare(" SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
