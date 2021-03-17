@@ -44,7 +44,7 @@
                         <div><label> Alias: <input type="text" name="alias" required><label></div>
                         <div><label> Email: <input type="email" name="email" required><label></div>
                         <div><label> Salario: <input type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salario" ><label></div>
-                        <div><label> Id Equipo: <input type="number" name="idequipo" ><label></div>
+                        <div><label> Id Equipo: <input type="number" name="idequipo" min="1" placeholder=" 1 sin equipo "required><label></div>
                         <div class="button"><button type="submit"> Generar </button></div>
                     </fieldset>
                 </form>
@@ -57,7 +57,7 @@
                         <div><label> Alias: <input type="text" name="aliasX" required><label></div>
                         <div><label> Email: <input type="email" name="emailX" required><label></div>
                         <div><label> Salario: <input type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salarioX" required><label></div>
-                        <div><label> Id Equipo: <input type="number" name="idequipoX" placeholder=" 1 sin equipo "required><label></div>
+                        <div><label> Id Equipo: <input type="number" name="idequipoX" min="1" placeholder=" 1 sin equipo "required><label></div>
                         <div class="button"><button type="submit"> Generar </button></div>
                     </fieldset>
                 </form>
@@ -75,13 +75,15 @@
                 <?php
                     include('conexionBd.php');
                     /**
-                     * Generar Informes a fecha concreta introducida , 
+                     * Generar Informes a fecha concreta introducida , mi formulario de 
                      */
                     if(isset($_POST['fecha'])){
                         $sentencia = $db->prepare("SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
-                        FROM `informes` i INNER JOIN `empleados` e ON i.`idEmpleado` = e.`idEmpleado` WHERE i.`fecha` = ? ");
-                        $sentencia ->bind_param('s', $param1);
+                        FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = ? ");
+                        $sentencia -> bind_param('s', $param1);
                         $param1 = $_POST['fecha'];
+                    
+                        // var_dump($param1);
                         $sentencia -> execute();
 
                         $fechaActual = date('Y-m-d');
@@ -104,7 +106,7 @@
                      * Registro nuevo usuario
                      */
                     if(isset($_POST['nombreCompleto'])){
-                        $sentencia = $db->prepare("INSERT TO `empleados`(`idequipo`, `nombreCompleto`,`alias`,`email`,`salario`) VALUES (?,?,?,?,?)");
+                        $sentencia = $db->prepare("INSERT INTO `empleados`(`idequipo`, `nombreCompleto`,`alias`,`email`,`salario`) VALUES (?,?,?,?,?)");
                         $sentencia ->bind_param('isssi', $param1, $param2, $param3, $param4, $param5);
                         $param1 = $_POST['idequipo'];
                         $param2 = $_POST['nombreCompleto'];
