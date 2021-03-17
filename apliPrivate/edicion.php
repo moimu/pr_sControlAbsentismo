@@ -79,17 +79,16 @@
                      * como en el parametro num_rows, ejecutando la consulta directamente si funciona.
                      */
                     if(isset($_POST['fecha'])){
-
-                        $param1 = $_POST['fecha'];
                         $sentencia = $db->prepare(" SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
-                        FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = '$param1' ");
-                        // $sentencia -> bind_param('s', $param1);
-                        // var_dump($param1);
+                        FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = ? ");
+                        $sentencia -> bind_param('s', $param1);
+                        $param1 = $_POST['fecha'];
+                        var_dump($param1);
                         $sentencia -> execute();
-                        $fechaActual = date('Y-m-d');
-                        // if($sentencia->num_rows > 0){ 
+                        $sentencia -> store_result();
+                        if($sentencia->num_rows > 0){ 
                             $sentencia ->bind_result($fecha, $totalPuntos, $nombreCompleto);
-                            $fichero = fopen("informe_$fechaActual.txt","w");
+                            $fichero = fopen("informe_$param1.txt","w");
                             fwrite($fichero, "fechaInforme    totalPuntos    Nombre \n\n");
                             while($sentencia->fetch()){
                                 // echo "$fecha, $totalPuntos, $nombreCompleto";
@@ -97,11 +96,11 @@
                             }
                             $sentencia -> close();
                             fclose($fichero);
-                            echo "<div class=smsImportante> Su informe se generó en directorio /apli/informe_$fechaActual.txt <div>"; 
-                        // }
-                        // else{
-                        //     echo "<div class=smsImportante> No existe registro para fecha $param1, vuelva a intentarlo <div>";
-                        // }
+                            echo "<div class=smsImportante> Su informe se generó en directorio /apli/informe_$param1.txt <div>"; 
+                        }
+                        else{
+                            echo "<div class=smsImportante> No existe registro para fecha $param1, vuelva a intentarlo <div>";
+                        }
                     }
                     /**
                      * Registro nuevo usuario
