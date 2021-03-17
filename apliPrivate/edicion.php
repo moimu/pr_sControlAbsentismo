@@ -33,7 +33,7 @@
                     <fieldset>
                         <legend>Informes</legend>
                         <div><label> Fecha: <input type="date" name="fecha" required><label></div>
-                        <div class="button"><button type="submit"> Generar </button></div>
+                        <div class="button"><button type="submit" name="enviar"> Generar </button></div>
                     </fieldset>
                 </form>
                 
@@ -77,30 +77,32 @@
                     /**
                      * Generar Informes a fecha concreta introducida , mi formulario de 
                      */
-                    if(isset($_POST['fecha'])){
-                        $sentencia = $db->prepare("SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
-                        FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = ? ");
-                        $sentencia -> bind_param('s', $param1);
+                    if(isset($_POST['enviar'])){
+
                         $param1 = $_POST['fecha'];
-                    
+                        $sentencia = $db->prepare(" SELECT i. `fecha`, i.`totalPuntos`, e.`nombreCompleto`
+                        FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = '$param1' ");
+                        // $sentencia -> bind_param('s', $param1);
+                        
                         // var_dump($param1);
                         $sentencia -> execute();
 
                         $fechaActual = date('Y-m-d');
-                        if($sentencia->affected_rows > 0){
+                        // if($sentencia->num_rows > 0){ 
                             $sentencia ->bind_result($fecha, $totalPuntos, $nombreCompleto);
                             $fichero = fopen("informe_$fechaActual.txt","w");
                             fwrite($fichero, "fechaInforme    totalPuntos    Nombre \n\n");
                             while($sentencia->fetch()){
+                                // echo "$fecha, $totalPuntos, $nombreCompleto";
                                 fwrite($fichero, "$fecha        $totalPuntos         $nombreCompleto \n");
                             }
                             $sentencia -> close();
                             fclose($fichero);
                             echo "<div class=smsImportante> Su informe se generó en directorio /apli/informe_$fechaActual.txt <div>"; 
-                        }
-                        else{
-                            echo "<div class=smsImportante> No existe registro para fecha $param1, vuelva a intentarlo <div>";
-                        }
+                        // }
+                        // else{
+                        //     echo "<div class=smsImportante> No existe registro para fecha $param1, vuelva a intentarlo <div>";
+                        // }
                     }
                     /**
                      * Registro nuevo usuario
