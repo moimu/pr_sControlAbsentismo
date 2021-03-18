@@ -83,7 +83,6 @@
                         FROM `empleados` e INNER JOIN `informes` i ON e.`idEmpleado` = i.`idEmpleado` WHERE i.`fecha` = ? ");
                         $sentencia -> bind_param('s', $param1);
                         $param1 = $_POST['fecha'];
-                        var_dump($param1);
                         $sentencia -> execute();
                         $sentencia -> store_result();
                         if($sentencia->num_rows > 0){ 
