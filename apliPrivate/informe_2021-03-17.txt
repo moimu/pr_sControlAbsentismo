@@ -1,0 +1,33 @@
+fechaInforme    totalPuntos    Nombre 
+
+2021-03-17        100         Moisés Antonio Muñoz Aranda 
+2021-03-17        98         Moisés Antonio Muñoz Aranda 
+2021-03-17        100         Golem Operario Armas Pesadas 
+2021-03-17        98         Golem Operario Armas Pesadas 
+2021-03-17        100         Miguel angel felipe antonio 
+2021-03-17        98         Miguel angel felipe antonio 
+2021-03-17        100         Juan David Jose Antonio 
+2021-03-17        98         Juan David Jose Antonio 
+2021-03-17        100         Arach Vermejo nuevo 
+2021-03-17        98         Arach Vermejo nuevo 
+2021-03-17        100         Linarejos Medina torrejon 
+2021-03-17        98         Linarejos Medina torrejon 
+2021-03-17        100         Isabel rey alvarez 
+2021-03-17        98         Isabel rey alvarez 
+2021-03-17        100         Manuel toledano down 
+2021-03-17        98         Manuel toledano down 
+2021-03-17        100         Samuel cotrina up 
+2021-03-17        98         Samuel cotrina up 
+2021-03-17        100         Alberto Ocete Aliaga 
+2021-03-17        98         Alberto Ocete Aliaga 
+2021-03-17        100         Ismael Aliaga Verdejo 
+2021-03-17        98         Ismael Aliaga Verdejo 
+2021-03-17        100         Pablo Jose tolero hidalgo 
+2021-03-17        98         Pablo Jose tolero hidalgo 
+2021-03-17        100         Alberto Ballesteros Delaventana 
+2021-03-17        98         Alberto Ballesteros Delaventana 
+2021-03-17        100         Jesús Jesús Jesús 
+2021-03-17        98         Jesús Jesús Jesús 
+2021-03-17        100         Rafa Kun fu 
+2021-03-17        98         Rafa Kun fu 
+2021-03-17        98         Rafa Kun fu 

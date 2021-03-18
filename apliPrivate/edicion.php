@@ -89,13 +89,15 @@
                             $sentencia ->bind_result($fecha, $totalPuntos, $nombreCompleto);
                             $fichero = fopen("informe_$param1.txt","w");
                             fwrite($fichero, "fechaInforme    totalPuntos    Nombre \n\n");
+                            echo "<table class=tableinforme border=1>";
                             while($sentencia->fetch()){
-                                // echo "$fecha, $totalPuntos, $nombreCompleto";
+                                echo "<tr><td>$fecha</td><td>$totalPuntos</td><td>$nombreCompleto</td></tr>";
                                 fwrite($fichero, "$fecha        $totalPuntos         $nombreCompleto \n");
                             }
+                            echo "</table>";
                             $sentencia -> close();
                             fclose($fichero);
-                            echo "<div class=smsImportante> Su informe se generó en directorio /apli/informe_$param1.txt <div>"; 
+                            echo "<div class=smsImportante> Su informe se generó en directorio /apliPrivate/informe_$param1.txt <div>"; 
                         }
                         else{
                             echo "<div class=smsImportante> No existe registro para fecha $param1, vuelva a intentarlo <div>";

@@ -58,6 +58,7 @@ header a{
 }
 main{
     padding-top: 12rem;
+   
 }
 /* .containermain{
     margin: 0 auto;
@@ -84,4 +85,11 @@ form{
     margin-top: 3rem;
     padding:3rem;
     background-color: rgb(201, 214, 21,0.9);
+}
+.tableinforme{
+    display: flex;
+    justify-content:space-around;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
