@@ -8,6 +8,9 @@
         <meta name="description" content=" Herramienta control de absentimo y recompensas ">
         <link rel="stylesheet" href="../styles/stylesindex.css">
         <link rel="icon" href="../images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- Encabezado con logo y menu navegador en la aplicación. -->     

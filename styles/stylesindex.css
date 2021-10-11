@@ -1,6 +1,5 @@
 :root{
     --color-negro:#523106;
-    --color-blanco:#f0e9e2;
     --color-principal: #75cfb8;
     --color-secundario: #bbdfc8;
     --color-contraste: #ffc478;
@@ -8,6 +7,14 @@
     --color-prueba2: #ffefa1;
     --color-prueba1: #94ebcd;
     --color-prueba2: #6ddccf;
+    font-family: 'IBM Plex Serif', serif;
+    --apricot: #ffcdb2ff;
+    --melon: #ffb4a2ff;
+    --melon-white: rgb(255, 199, 185);
+    --pastel-pink: #e5989bff;
+    --english-lavender: #b5838dff;
+    --old-lavender: #6d6875ff;
+    --blanco:#ffffff;
 }
 *{
 	margin: 0;
@@ -16,11 +23,10 @@
 	text-decoration: none;
 	border: none;
 	outline: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'IBM Plex Serif', Segoe UI, Tahoma, Geneva, Verdana, serif;
 }
- 
 body{
-    background-color: var(--color-blanco);
+    background-color: #ffffff;
     font-size: 1.2rem;
     line-height: 2em;
 }
@@ -30,7 +36,8 @@ header{
     right:0;
     top:0;
     padding: 1rem 0;
-    background-color:  var(--color-principal)
+    /* background-color:  var(--melon-white); */
+    background: linear-gradient(to bottom, var(--melon), var(--blanco));
 }
 header a{
     padding: 2rem;
@@ -46,7 +53,11 @@ header a{
     transition: all 0.3s linear;
 }
 .menu ol li a:hover{
-    background-color: rgb(143, 120, 112,0.3);
+    background-color:rgba(255, 255, 255, 0.15); 
+
+    /* rgba(255, 255, 255, 0.15); */
+    /* var(--old-lavender); */
+    color:#ffffff;
 }
 .containerlogomenu{
     display:flex;
@@ -71,7 +82,7 @@ main{
 
 }
 .footer{
-    background-color: var(--color-principal);
+    background: linear-gradient(to top, var(--melon), var(--blanco));
     padding:2rem 0;
     margin-top: 5rem;
     text-align: right;
