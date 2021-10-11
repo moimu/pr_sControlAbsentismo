@@ -63,10 +63,10 @@ main{
 /* .containermain{
     margin: 0 auto;
 } */
-form{
+.formedit{
     padding-top: 3rem;
 }
-.button{
+.buttonedit{
     background-color: var(--color-principal);
 }
 
@@ -76,12 +76,13 @@ form{
     margin-top: 5rem;
     text-align: right;
 }
-.container{
+.mainedit{
     width:85%;
     max-width: 850px;
     margin: 0 auto;
 }
-.smsImportante{
+
+.smsImportanteEdit{
     margin-top: 3rem;
     padding:3rem;
     background-color: rgb(201, 214, 21,0.9);

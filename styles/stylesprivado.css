@@ -8,6 +8,8 @@
     --color-prueba2: #ffefa1;
     --color-prueba1: #94ebcd;
     --color-prueba2: #6ddccf;
+    --apricot: #ffcdb2ff;
+    --melon: #ffb4a2ff;
 }
 *{
 	margin: 0;
@@ -60,18 +62,18 @@ header a{
 main{
     padding-top: 12rem;
 }
-.containermain{
+.mainprivado{
     margin: 0 auto;
 }
-.tabla1{
+.tablaprivado{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.tabla1 tbody td{
+.tablaprivado tbody td{
     text-align: center;
 }
-.trbutton{
+.trbuttonprivado{
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -102,4 +104,7 @@ main{
     font-size: 1.6rem;
     /* margin-left:  auto;
     margin-right:  auto; */
+}
+.inputinserthoras{
+    background-color: var(--apricot);
 }

@@ -1,0 +1,184 @@
+:root{
+    --color-principal: #75cfb8;
+    --color-secundario: #bbdfc8;
+    --color-contraste: #ffc478;
+    --color-prueba1: #ffcb91;
+    --color-prueba2: #ffefa1;
+    --color-prueba1: #94ebcd;
+    --color-prueba2: #6ddccf;
+    font-family: 'IBM Plex Serif', serif;
+    --apricot: #ffcdb2ff;
+    --melon: #ffb4a2ff;
+    --pastel-pink: #e5989bff;
+    --english-lavender: #b5838dff;
+    --old-lavender: #6d6875ff;
+    --blanco:#ffffff;
+    --color-negro:#523106;
+    --gris-plata: #e3e4e5;
+    --amarilloalerta: #c9d615e6;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+    /*  */
+	border: none;
+	outline: none;
+    font-family: 'IBM Plex Serif', Segoe UI, Tahoma, Geneva, Verdana, serif;
+}
+body{
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 2em;
+}
+header{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    padding: 1rem 0;
+    background: linear-gradient(to bottom, var(--melon), var(--blanco));
+}
+header a{
+    padding: 2rem;
+    color:var(--color-negro);
+}
+.menu ol li{
+    display: inline-block;
+}
+.menu ol li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius:5px;
+    transition: all 0.3s linear;
+}
+.menu ol li a:hover{
+    background-color:rgba(255, 255, 255, 0.15); 
+    color:#ffffff;
+}
+.containerlogomenu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    letter-spacing:5px;
+    font-size:2em;
+    transition: all 0.3s linear;
+}
+main{
+    padding-top: 12rem;
+}
+.tabla1{
+    display: flex;
+    align-items: center;
+}
+.tabla1 tbody td{
+    min-width: 200px;
+    text-align: center;
+
+}
+.footer{
+    background: linear-gradient(to top, var(--melon), var(--blanco));
+    padding:2rem 0;
+    margin-top: 5rem;
+    text-align: right;
+
+}
+.mainprincipal{
+    width:85%;
+    max-width: 850px;
+    margin: 2em auto 2em auto;
+}
+
+/* zona privada */
+
+.mainprivado{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em auto 2em auto;
+}
+.tablaprivado{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.tablaprivado tbody td{
+    text-align: center;
+    padding: 5px;
+}
+.envioformprivado{
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    border-radius: 10%;
+    background-color: var(--melon);
+    padding: 1.5rem 1.8rem;
+    transition: all 0.5s linear;
+    margin-top : 2em;
+}
+.smsImportante{
+    margin-top: 3rem;
+    padding:3rem;
+    background-color: var(--amarilloalerta);
+    text-align: center;
+    font-size: 1.6rem;
+}
+.inputinserthoras{
+    background-color: var(--gris-plata);
+}
+
+/* zona edicion */
+
+.formedit{
+    padding-top: 3rem;
+}
+.formedit legend{
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+.buttonedit{
+    background-color: var(--melon);
+    border-radius: 10px 10px 10px 10px/ 10px 10px 10px 10px;
+    width: 180px;
+    height: 35px;
+    margin:40px;
+}
+.buttonedit:hover{
+    background-color:var(--apricot);
+    color:#ffffff;
+}
+.mainedit{
+    width:85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.smsImportanteEdit{
+    margin-top: 3rem;
+    padding:3rem;
+    background-color: rgb(201, 214, 21,0.9);
+}
+.tableinforme{
+    display: flex;
+    justify-content:space-around;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.inputedit{
+    background-color: var(--gris-plata);
+}
+
+@media only screen and (max-width: 480px) {
+    .image-card{
+    width:100%;
+    }
+    .info-card{
+    width:100%;
+    }
+    .research-card{
+    width:100%;
+    }
+}

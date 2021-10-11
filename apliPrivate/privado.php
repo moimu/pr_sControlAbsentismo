@@ -6,8 +6,11 @@
     <meta charset=" UTF-8 ">
     <meta name="viewport" content=" width=device-width, initial-scale=1 ">
     <meta name="description" content=" Herramienta control de absentimo y recompensas ">
-    <link rel="stylesheet" href="../styles/stylesprivado.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" href="../images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,20 +29,24 @@
     </header>
 
     <main>
-        <div class="containermain">
+        <div class="mainprivado">
             <?php
                 include('conexionBd.php');
                 
-                $sentencia = $db->prepare("SELECT em.`idEmpleado`, em.`nombreCompleto`, em.`alias`, em.`email`, em.`totalPuntos`, em.`porcentajeIncentivo`, em.`salario`,
-                em.`activo`, eq.`alias` FROM `empleados` em INNER JOIN `equipos` eq ON em.`idEquipo`= eq.`idEquipo` ");     
+                $sentencia = $db->prepare("SELECT em.`idEmpleado`, em.`nombreCompleto`,
+                em.`alias`, em.`email`, em.`totalPuntos`, em.`porcentajeIncentivo`,
+                em.`salario`, em.`activo`, eq.`alias` 
+                FROM `empleados` em 
+                INNER JOIN `equipos` eq 
+                ON em.`idEquipo`= eq.`idEquipo` ");     
                 $sentencia -> execute();
                 $sentencia -> bind_result($idEmpleado, $nombreCompleto ,$aliasEmpleado, $email , $totalPuntos ,$prIncentivo,  $salario, $activo,  $aliasEquipo);
-
-                echo "<table class=tabla1>";
-                echo "<form method=POST enctype=application/x-www-form-urlencoded action=privado.php >";
-                
-                echo  "<tbody><tr> <th>Activo</th><th>idEmpleado</th><th>Nombre</th><th>Alias</th> <th>Email</th><th>% Incentivo</th><th>Salario</th><th>Puntos de Mérito</th><th>Equipo</th>
-                <th>Nº horas ausente</th><th>Nª horas retraso</th> </tr> ";
+                echo  "<form method=POST enctype=application/x-www-form-urlencoded action=privado.php id=formprivado>";
+                echo  "
+                <table class=tablaprivado>
+                    <tbody>
+                        <tr> <th>Activo</th> <th>Id</th> <th>Nombre</th> <th>Alias</th> <th>Incentivo</th> 
+                        <th>Salario</th> <th>Nº Hr ausente</th><th>Nª Hr retraso</th> </tr> ";
                 /**
                  * Para todos los empeados activos!
                  * Creo variable con cantidad ids , array con todos los ids y array con todos los puntos 
@@ -51,25 +58,41 @@
                 $idSeleccion = [];
                 $totalPuntosSeleccion = [];
                 $totalids = 0;
-                while($sentencia->fetch()){
-                    
-                    echo  "<tr><td>$activo</td><td>$idEmpleado</td><td>$nombreCompleto</td><td>$aliasEmpleado</td><td>$email</td><td>$prIncentivo</td>
-                    <td>$salario</td><td>$totalPuntos</td><td>$aliasEquipo</td> 
-                    <td> <input type=number min=0 name=ausente$totalids required> </td> <td> <input type=number min=0 name=retraso$totalids required> </td>  </tr> ";
+                while( $sentencia->fetch() ){
+                    echo  "
+                    <tr>
+                        <td>$activo</td>
+                        <td>$idEmpleado</td>
+                        <td>$nombreCompleto</td>
+                        <td>$aliasEmpleado</td>
+                        <td>$prIncentivo%</td>
+                        <td>$salario</td>
+                        <td> 
+                            <input class=inputinserthoras type=number min=0 name=ausente$totalids required> 
+                        </td> 
+                        <td> 
+                            <input class=inputinserthoras type=number min=0 name=retraso$totalids required> 
+                        </td>  
+                    </tr> ";
                     $idSeleccion[$totalids] = $idEmpleado;
                     $totalPuntosSeleccion[$totalids] = $totalPuntos;
                     $totalids++;
-                    
                 }
-                echo "</tbody>";
-                echo "</tfoot>";
-                echo "<tr class=trbutton> <td> Dia de la semana <input type=text name=dia_semana required> </td> <td><button type=submit> Actualizar </button></td> </tr>";
-                echo "</tfood>";
-                echo "</form>";
-                echo "</table>";
-                $sentencia->close();    
-                
-
+                $sentencia->close();
+                echo "</tbody></table></form>";
+                ?>
+                <div class="envioformprivado">
+                    <label for=dia_semana> Dia de la semana </label> 
+                    <select name=dia_semana form=formprivado >
+                        <option value=Lunes>Lunes</option>
+                        <option value=Martes>Martes</option>
+                        <option value=Miercoles>Miercoles</option>
+                        <option value=Jueves>Jueves</option>
+                        <option value=Viernes>Viernes</option>
+                    </select>  
+                    <button type=submit form=formprivado> Actualizar </button> 
+                </div>
+                <?php
                 if(isset($_POST['dia_semana'])){
                     /**
                      *  $ausente[]
@@ -107,7 +130,7 @@
                     $sentencia->execute();
                     $sentencia -> bind_result($lun, $mar, $mie, $jue, $vie);
                     while($sentencia->fetch()){
-                        $horasDiaSemana = ["lunes" => $lun, "martes" =>  $mar, "miercoles" =>  $mie, "jueves" =>  $jue, "viernes" =>  $vie];
+                        $horasDiaSemana = ["Lunes" => $lun, "Martes" =>  $mar, "Miercoles" =>  $mie, "Jueves" =>  $jue, "Viernes" =>  $vie];
                     }
                     $sentencia->close();
 

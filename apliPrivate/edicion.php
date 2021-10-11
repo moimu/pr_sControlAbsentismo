@@ -6,8 +6,11 @@
         <meta charset=" UTF-8 ">
         <meta name="viewport" content=" width=device-width, initial-scale=1 ">
         <meta name="description" content=" Herramienta control de absentimo y recompensas ">
-        <link rel="stylesheet" href="../styles/stylesedicion.css">
+        <link rel="stylesheet" href="../styles/style.css">
         <link rel="icon" href="../images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -25,52 +28,52 @@
         </header>
         
         <main>
-            <div class="container">
+            <div class="mainedit">
             
             <!-- formularios para obtencion de datos, genera informe, registra empleado a la api, editar usuario, y activa o desactiva empleado -->
              
-                <form method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
-                    <fieldset>
-                        <legend>Informes</legend>
-                        <div><label> Fecha: <input type="date" name="fecha" required><label></div>
-                        <div class="button"><button type="submit"> Generar </button></div>
-                    </fieldset>
-                </form>
-                
-                <form method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
-                    <fieldset>
-                        <legend> Registro Nuevo Usuario</legend>
-                        <div><label> Nombre y apellidos: <input type="text" name="nombreCompleto" required><label></div>
-                        <div><label> Alias: <input type="text" name="alias" required><label></div>
-                        <div><label> Email: <input type="email" name="email" required><label></div>
-                        <div><label> Salario: <input type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salario" ><label></div>
-                        <div><label> Id Equipo: <input type="number" name="idequipo" min="1" placeholder=" 1 sin equipo "required><label></div>
-                        <div class="button"><button type="submit"> Generar </button></div>
-                    </fieldset>
-                </form>
-                
-                <form method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
-                    <fieldset>
-                        <legend> Editar Usuario</legend>
-                        <div><label> Id Empleado: <input type="number" name="idEmpleadoX" required><label></div>
-                        <div><label> Nombre y apellidos: <input type="text" name="nombreCompletoX" required><label></div>
-                        <div><label> Alias: <input type="text" name="aliasX" required><label></div>
-                        <div><label> Email: <input type="email" name="emailX" required><label></div>
-                        <div><label> Salario: <input type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salarioX" required><label></div>
-                        <div><label> Id Equipo: <input type="number" name="idequipoX" min="1" placeholder=" 1 sin equipo "required><label></div>
-                        <div class="button"><button type="submit"> Generar </button></div>
-                    </fieldset>
-                </form>
+            <form class="formedit" method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
+                <fieldset>
+                    <legend>Informes</legend>
+                    <div><label> Fecha: <input class="inputedit" type="date" name="fecha" required><label></div>
+                    <button class="buttonedit" type="submit"> Generar </button>
+                </fieldset>
+            </form>
+            
+            <form class="formedit" method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
+                <fieldset>
+                    <legend> Registro Nuevo Usuario</legend>
+                    <div><label> Nombre y apellidos: <input class="inputedit" type="text" name="nombreCompleto" required><label></div>
+                    <div><label> Alias: <input class="inputedit" type="text" name="alias" required><label></div>
+                    <div><label> Email: <input class="inputedit" type="email" name="email" required><label></div>
+                    <div><label> Salario: <input class="inputedit" type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salario" ><label></div>
+                    <div><label> Id Equipo: <input class="inputedit" type="number" name="idequipo" min="1" placeholder=" 1 sin equipo "required><label></div>
+                    <button class="buttonedit" type="submit"> Generar </button>
+                </fieldset>
+            </form>
+            
+            <form class="formedit" method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
+                <fieldset>
+                    <legend> Editar Usuario</legend>
+                    <div><label> Id Empleado: <input class="inputedit" type="number" name="idEmpleadoX" required><label></div>
+                    <div><label> Nombre y apellidos: <input class="inputedit" type="text" name="nombreCompletoX" required><label></div>
+                    <div><label> Alias: <input class="inputedit" type="text" name="aliasX" required><label></div>
+                    <div><label> Email: <input class="inputedit" type="email" name="emailX" required><label></div>
+                    <div><label> Salario: <input class="inputedit" type="number" min="0.00" max="99999.99" placeholder="3000.80" name="salarioX" required><label></div>
+                    <div><label> Id Equipo: <input class="inputedit" type="number" name="idequipoX" min="1" placeholder=" 1 sin equipo "required><label></div>
+                    <button class="buttonedit" type="submit"> Generar </button>
+                </fieldset>
+            </form>
 
-                <form method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
-                    <fieldset>
-                        <legend> Activar o Desactivar Usuario </legend>
-                        <div><label> Id Empleado: <input type="number" name="id" min="0" required><label></div>
-                        <div><label> Activar <input type="radio" name="activar" value="1" required><label></div>
-                        <div><label> Desactivar <input type="radio" name="activar" value="0" required><label></div>
-                        <div class="button"><button type="submit"> Generar </button></div>
-                    </fieldset>
-                </form>
+            <form class="formedit" method="POST" enctype="application/x-www-form-urlencoded" action="edicion.php">
+                <fieldset>
+                    <legend> Activar o Desactivar Usuario </legend>
+                    <div><label> Id Empleado: <input class="inputedit" type="number" name="id" min="0" required><label></div>
+                    <div><label> Activar <input class="inputedit" type="radio" name="activar" value="1" required><label></div>
+                    <div><label> Desactivar <input class="inputedit" type="radio" name="activar" value="0" required><label></div>
+                    <button class="buttonedit" type="submit"> Generar </button>
+                </fieldset>
+            </form>
 
                 <?php
                     include('conexionBd.php');
@@ -154,10 +157,10 @@
                         $param1 = $_POST['activar'];
                         $sentencia ->execute();
                         if($sentencia->affected_rows > 0){
-                            echo "<div class=smsImportante> Actualización Correcta <div>";
+                            echo "<div class=smsImportanteEdit> Actualización Correcta <div>";
                         }
                         else{
-                            echo "<div class=smsImportante> No se modificó el estado, ingrese id válido <div>";
+                            echo "<div class=smsImportanteEdit> No se modificó el estado, ingrese id válido <div>";
                         }
                         $sentencia -> close();
                     }
