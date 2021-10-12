@@ -7,10 +7,14 @@
         <meta name="viewport" content=" width=device-width, initial-scale=1 ">
         <meta name="description" content=" Herramienta control de absentimo y recompensas ">
         <link rel="stylesheet" href="../styles/style.css">
-        <link rel="icon" href="../images/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="icon" href="../images/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
 
@@ -28,7 +32,7 @@
         </header>
         
         <main>
-            <div class="mainedit">
+            <section class="mainedit">
             
             <!-- formularios para obtencion de datos, genera informe, registra empleado a la api, editar usuario, y activa o desactiva empleado -->
              
@@ -166,12 +170,12 @@
                     }
                     $db->close();
                 ?> 
-            </div>
+            </section>
         </main>
 
         <footer class="footer">  
-            <div class="container">
-                <p> Sistema Control Absentismo     Designed 2021 </p>
+            <div class="footerinfo">
+                <p>Sistema Control Absentismo</p>
             </div>
         </footer>
 

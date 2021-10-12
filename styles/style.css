@@ -1,12 +1,5 @@
 :root{
-    --color-principal: #75cfb8;
-    --color-secundario: #bbdfc8;
-    --color-contraste: #ffc478;
-    --color-prueba1: #ffcb91;
-    --color-prueba2: #ffefa1;
-    --color-prueba1: #94ebcd;
-    --color-prueba2: #6ddccf;
-    font-family: 'IBM Plex Serif', serif;
+    /* Paleta pastel */
     --apricot: #ffcdb2ff;
     --melon: #ffb4a2ff;
     --pastel-pink: #e5989bff;
@@ -22,21 +15,17 @@
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
-    /*  */
 	border: none;
 	outline: none;
     font-family: 'IBM Plex Serif', Segoe UI, Tahoma, Geneva, Verdana, serif;
 }
 body{
+    margin:0;
     background-color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 2em;
 }
 header{
-    position: fixed;
-    left:0;
-    right:0;
-    top:0;
     padding: 1rem 0;
     background: linear-gradient(to bottom, var(--melon), var(--blanco));
 }
@@ -67,29 +56,30 @@ header a{
     font-size:2em;
     transition: all 0.3s linear;
 }
-main{
-    padding-top: 12rem;
-}
 .tabla1{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .tabla1 tbody td{
     min-width: 200px;
     text-align: center;
-
 }
 .footer{
     background: linear-gradient(to top, var(--melon), var(--blanco));
     padding:2rem 0;
     margin-top: 5rem;
     text-align: right;
-
+}
+.footerinfo{
+    padding: 0.5rem 1rem;
 }
 .mainprincipal{
-    width:85%;
-    max-width: 850px;
-    margin: 2em auto 2em auto;
+    /* width:100vh;
+    padding-top: 12rem;
+    max-width: 850px; */
+    margin: 3em auto 3em auto;
+    min-height: 60vh;
 }
 
 /* zona privada */
@@ -98,7 +88,8 @@ main{
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin: 2em auto 2em auto;
+    margin: 3em auto 3em auto;
+    min-height: 60vh;
 }
 .tablaprivado{
     display:flex;
@@ -133,7 +124,7 @@ main{
 /* zona edicion */
 
 .formedit{
-    padding-top: 3rem;
+    padding: 3rem;
 }
 .formedit legend{
     font-size: 1.3em;
@@ -151,9 +142,11 @@ main{
     color:#ffffff;
 }
 .mainedit{
-    width:85%;
-    max-width: 850px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3em auto 3em auto;
+    min-height: 60vh;
 }
 .smsImportanteEdit{
     margin-top: 3rem;
@@ -171,14 +164,28 @@ main{
     background-color: var(--gris-plata);
 }
 
-@media only screen and (max-width: 480px) {
-    .image-card{
-    width:100%;
+/* RESPOSIVE */
+
+/* Escritorios muy anchos */ 
+/* @media (min-width: 1200px) {} */
+
+/* Tablets en horizonal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) { 
+    .celdaSobrante{
+        display: none;
     }
-    .info-card{
-    width:100%;
-    }
-    .research-card{
-    width:100%;
+    .formedit{
+        width: 100%;
+        text-align: center;
     }
 }
+ 
+/* Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) {
+    .celdaSobrante{
+        display: none;
+    }
+}
+ 
+/* Móviles en vertical */
+/* @media (max-width: 480px) {} */
