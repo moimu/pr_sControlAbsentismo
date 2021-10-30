@@ -1,4 +1,7 @@
+
+DROP DATABASE IF EXISTS  `controlabsentismo`;
 CREATE DATABASE `controlabsentismo`;
+USE  `controlabsentismo`;
 
 CREATE TABLE `equipos`(
     `idEquipo` MEDIUMINT UNSIGNED AUTO_INCREMENT,

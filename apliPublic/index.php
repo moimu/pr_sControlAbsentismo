@@ -24,7 +24,7 @@
                     <nav class="menu">
                         <ol>
                             <li><a href="index.php"> Principal </a></li>
-                            <li><a href="../apliPrivate/privado.php"> Privado Control Horario </a></li>
+                            <li><a href="../apliPrivate/privado.php"> Privado Control </a></li>
                             <li><a href="../apliPrivate/edicion.php"> Privado Edición </a></li>
                         </ol>
                     </nav>
